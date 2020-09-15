@@ -1,6 +1,11 @@
 import React from 'react';
 
-const Form = ({ inputFields, inputValues, onInputChange }) => {
+const Form = ({ inputFields, inputValues, onInputChange, onSubmit }) => {
+  const handleSubmitButtonClick = (ev) => {
+    onSubmit();
+    ev.preventDefault();
+  };
+
   return (
     <form>
       {inputFields.map(({ label, id, placeholder, type, maxLength }) => (
@@ -16,7 +21,7 @@ const Form = ({ inputFields, inputValues, onInputChange }) => {
           ></input>
         </div>
       ))}
-      <input type="submit" value="Enviar" />
+      <input type="submit" value="Submit" onClick={handleSubmitButtonClick} />
     </form>
   );
 };
