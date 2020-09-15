@@ -1,7 +1,9 @@
 import React from 'react';
+import formData from './data/formData.json';
+import Form from './components/Form/Form';
 
-function App() {
-  return <h1>Hola mundo</h1>;
-}
+const App = () => {
+  return <Form inputFields={formData.inputFields} />;
+};
 
 export default App;
