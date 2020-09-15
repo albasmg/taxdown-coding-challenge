@@ -19,7 +19,6 @@ const App = () => {
 
   const handleFormSubmit = () => {
     console.log(formInputValues);
-
     setSubmissions([...submissions, formInputValues]);
   };
 
