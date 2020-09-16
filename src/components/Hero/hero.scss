@@ -2,13 +2,13 @@
   @include flex-vertically-centered;
   width: 100%;
   background-color: $primary-color;
-  height: 60px;
+  height: rem(60);
   position: relative;
   overflow: hidden;
 
   @include tablet {
     justify-content: column;
-    height: 400px;
+    height: rem(400);
   }
 
   @include desktop {
@@ -20,8 +20,8 @@
     @include flex-vertically-centered;
     position: fixed;
     top: 0;
-    height: 60px;
-    padding-left: 24px;
+    height: rem(60);
+    padding-left: rem(24);
   }
 
   &__claim {
@@ -41,17 +41,17 @@
   &__link {
     color: $secondary-color;
     text-decoration: underline;
-    font-size: 18px;
+    font-size: $font-medium;
   }
 
   &__decoration {
     position: absolute;
     bottom: 0;
     left: 50;
-    height: 280px;
-    width: 400px;
+    height: rem(280);
+    width: rem(400);
     background-color: $secondary-color;
-    border-radius: 40px;
+    border-radius: rem(40);
     transform: rotate(30deg) translate(30%, 50%);
     animation: hero-decoration-animation 3s;
   }

@@ -2,11 +2,11 @@
   border: none;
   border-bottom: 1px solid $dark-color;
   width: 90%;
-  margin-bottom: 30px;
-  padding: 4px;
+  margin-bottom: rem(30);
+  padding: rem(4);
   outline: none;
 
   @include tablet {
-    width: 400px;
+    width: rem(400);
   }
 }

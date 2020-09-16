@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Label from '../Label/Label';
 import Input from '../Input/Input';
 
 const Form = ({ inputFields, inputValues, onInputChange, onSubmit }) => {
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const isSubmitButtonDisabled = Object.keys(inputValues).some(
     (inputValue) => !inputValues[inputValue].trim()
   );
 
   const handleSubmitButtonClick = (ev) => {
+    setIsFormSubmitted(true);
+    setTimeout(() => setIsFormSubmitted(false), 2000);
     onSubmit();
     ev.preventDefault();
   };
@@ -43,6 +46,16 @@ const Form = ({ inputFields, inputValues, onInputChange, onSubmit }) => {
         className="form__submitBtn"
         disabled={isSubmitButtonDisabled}
       />
+      <div className="form__submittedMessageContainer">
+        {isFormSubmitted && (
+          <p className="form__submittedMessage">
+            Your form has been submitted successfully!{' '}
+            <span role="img" aria-label="icon">
+              💃🏻
+            </span>
+          </p>
+        )}
+      </div>
     </form>
   );
 };

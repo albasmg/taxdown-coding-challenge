@@ -1,7 +1,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: rem(40);
   height: 100vh;
   width: 100%;
   margin: auto;
@@ -18,7 +18,7 @@
   }
 
   &__claim {
-    margin-bottom: 20px;
+    margin-bottom: rem(20);
 
     span {
       color: $secondary-color;
@@ -29,23 +29,23 @@
   }
 
   &__submitBtn {
-    height: 50px;
+    height: rem(50);
     background-color: $main-btn-color;
     color: $light-color;
     font-weight: 800;
     width: 90%;
     border: none;
-    border-radius: 6px;
-    margin-bottom: 30px;
+    border-radius: rem(6);
+    margin-bottom: rem(30);
     cursor: pointer;
     outline: none;
 
     @include tablet {
-      width: 400px;
+      width: rem(400);
     }
 
     @include desktop {
-      width: 100px;
+      width: rem(100);
     }
 
     &:disabled {
@@ -57,12 +57,21 @@
   &__link {
     color: $secondary-color;
     text-decoration: underline;
-    font-size: 16px;
-    margin-bottom: 30px;
+    font-size: $font-regular;
+    margin-bottom: rem(30);
 
     @include tablet {
       display: none;
     }
+  }
+
+  &__submittedMessageContainer {
+    height: rem(14);
+  }
+
+  &__submittedMessage {
+    color: $primary-color;
+    font-size: $font-small;
   }
 
   &__decoration {
@@ -73,10 +82,10 @@
       position: absolute;
       top: 0;
       left: 50;
-      height: 300px;
-      width: 300px;
+      height: rem(300);
+      width: rem(300);
       background-color: $secondary-color;
-      border-radius: 40px;
+      border-radius: rem(40);
       transform: rotate(45deg) translate(-30%, -60%);
       animation: form-decoration-animation 3s;
     }
