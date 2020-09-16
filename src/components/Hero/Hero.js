@@ -17,8 +17,7 @@ const Hero = () => {
             <p className="hero__link">Show all submissions</p>
           </Link>
         </div>
-
-        <div className="hero__div"></div>
+        <div className="hero__decoration"></div>
       </div>
     </section>
   );

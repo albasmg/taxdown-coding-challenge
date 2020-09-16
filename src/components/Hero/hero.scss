@@ -44,7 +44,7 @@
     font-size: 18px;
   }
 
-  &__div {
+  &__decoration {
     position: absolute;
     bottom: 0;
     left: 50;
@@ -52,6 +52,16 @@
     width: 400px;
     background-color: $secondary-color;
     border-radius: 40px;
+    transform: rotate(30deg) translate(30%, 50%);
+    animation: hero-decoration-animation 3s;
+  }
+}
+
+@keyframes hero-decoration-animation {
+  0% {
+    transform: rotate(80deg) translate(80%, 100%);
+  }
+  100% {
     transform: rotate(30deg) translate(30%, 50%);
   }
 }

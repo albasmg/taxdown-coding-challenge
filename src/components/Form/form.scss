@@ -78,6 +78,16 @@
       background-color: $secondary-color;
       border-radius: 40px;
       transform: rotate(45deg) translate(-30%, -60%);
+      animation: form-decoration-animation 3s;
     }
+  }
+}
+
+@keyframes form-decoration-animation {
+  0% {
+    transform: rotate(75deg) translate(-100%, -60%);
+  }
+  100% {
+    transform: rotate(45deg) translate(-30%, -60%);
   }
 }
