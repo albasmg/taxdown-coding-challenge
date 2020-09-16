@@ -7,10 +7,12 @@ const Form = ({ inputFields, inputValues, onInputChange, onSubmit }) => {
   };
 
   return (
-    <form>
+    <form className="form">
       {inputFields.map(({ label, id, placeholder, type, maxLength }) => (
-        <div key={id}>
-          <label htmlFor={id}>{label}</label>
+        <div className="form__inputs" key={id}>
+          <label className="form_inputLabel" htmlFor={id}>
+            {label}
+          </label>
           <input
             id={id}
             placeholder={placeholder}

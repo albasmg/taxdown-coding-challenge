@@ -1,0 +1,27 @@
+@mixin tablet {
+  @media all and (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media all and (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-vertically-centered {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-horizontally-centered {
+  display: flex;
+  justify-content: center;
+}

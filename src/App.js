@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import formData from './data/formData.json';
+import Hero from './components/Hero/Hero';
 import Form from './components/Form/Form';
 
 const initalizeFormInputValues = () =>
@@ -23,12 +24,15 @@ const App = () => {
   };
 
   return (
-    <Form
-      inputFields={formData.inputFields}
-      inputValues={formInputValues}
-      onInputChange={handleInputChange}
-      onSubmit={handleFormSubmit}
-    />
+    <section className="app">
+      <Hero />
+      <Form
+        inputFields={formData.inputFields}
+        inputValues={formInputValues}
+        onInputChange={handleInputChange}
+        onSubmit={handleFormSubmit}
+      />
+    </section>
   );
 };
 
