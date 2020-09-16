@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Label = ({ id, title }) => {
+const Label = ({ id, title, isRequired }) => {
   return (
     <label className="label" htmlFor={id}>
-      {title}
+      {title} {isRequired && '*'}
     </label>
   );
 };

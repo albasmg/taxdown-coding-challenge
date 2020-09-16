@@ -4,6 +4,10 @@ import Label from '../Label/Label';
 import Input from '../Input/Input';
 
 const Form = ({ inputFields, inputValues, onInputChange, onSubmit }) => {
+  const isSubmitButtonDisabled = Object.keys(inputValues).some(
+    (inputValue) => !inputValues[inputValue].trim()
+  );
+
   const handleSubmitButtonClick = (ev) => {
     onSubmit();
     ev.preventDefault();
@@ -20,7 +24,7 @@ const Form = ({ inputFields, inputValues, onInputChange, onSubmit }) => {
       </Link>
       {inputFields.map(({ label, id, placeholder, type, maxLength }) => (
         <div className="form__group" key={id}>
-          <Label id={id} title={label}></Label>
+          <Label id={id} title={label} isRequired></Label>
           <Input
             id={id}
             placeholder={placeholder}
@@ -36,6 +40,7 @@ const Form = ({ inputFields, inputValues, onInputChange, onSubmit }) => {
         value="Submit"
         onClick={handleSubmitButtonClick}
         className="form__submitBtn"
+        disabled={isSubmitButtonDisabled}
       />
     </form>
   );
