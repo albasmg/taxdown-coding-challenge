@@ -1,5 +1,6 @@
 import React from 'react';
 import { capitalize } from '../../utils';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.svg';
 
@@ -27,12 +28,12 @@ const Submissions = ({ submissions }) => {
         <h1 className="submissions__title">Submission list</h1>
         <ul className="submissions__list">
           {submissions.map((submission, index) => (
-            <li className="submissions__listElement">
+            <li className="submissions__listElement" key={index}>
               <h2 className="submissions__listElementTitle">
                 Submission <span>{index + 1}</span>
               </h2>
               {Object.keys(submission).map((inputKey) => (
-                <p>
+                <p key={inputKey}>
                   {capitalize(inputKey)}: {submission[inputKey]}
                 </p>
               ))}
@@ -45,6 +46,10 @@ const Submissions = ({ submissions }) => {
       </div>
     </section>
   );
+};
+
+Submissions.propTypes = {
+  submissions: PropTypes.array,
 };
 
 export default Submissions;

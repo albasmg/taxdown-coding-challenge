@@ -14,7 +14,7 @@ const Hero = () => {
             <span>Hey!</span> Could you fill this form for us?
           </h1>
           <Link to="/submissions">
-            <p class="hero__link">Show all submissions</p>
+            <p className="hero__link">Show all submissions</p>
           </Link>
         </div>
 

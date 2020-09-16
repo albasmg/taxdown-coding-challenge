@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Label from '../Label/Label';
 import Input from '../Input/Input';
 
@@ -20,7 +21,7 @@ const Form = ({ inputFields, inputValues, onInputChange, onSubmit }) => {
         <span>Hey!</span> Could you fill this form for us?
       </h2>
       <Link to="/submissions">
-        <p class="form__link">Show all submissions</p>
+        <p className="form__link">Show all submissions</p>
       </Link>
       {inputFields.map(({ label, id, placeholder, type, maxLength }) => (
         <div className="form__group" key={id}>
@@ -44,6 +45,13 @@ const Form = ({ inputFields, inputValues, onInputChange, onSubmit }) => {
       />
     </form>
   );
+};
+
+Form.propTypes = {
+  inputFields: PropTypes.array.isRequired,
+  inputValues: PropTypes.object.isRequired,
+  onInputChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default Form;
