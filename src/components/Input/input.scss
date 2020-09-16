@@ -1,0 +1,12 @@
+.input {
+  border: none;
+  border-bottom: 1px solid $dark-color;
+  width: 90%;
+  margin-bottom: 30px;
+  padding: 4px;
+  outline: none;
+
+  @include tablet {
+    width: 400px;
+  }
+}
