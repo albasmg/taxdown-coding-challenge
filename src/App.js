@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { Route, Switch, Link } from 'react-router-dom';
 import formData from './data/formData.json';
 import Hero from './components/Hero/Hero';
 import Form from './components/Form/Form';
+import Submissions from './components/Submissions/Submissions';
 
 const initalizeFormInputValues = () =>
   formData.inputFields.reduce((inputValues, inputField) => {
@@ -25,13 +27,20 @@ const App = () => {
 
   return (
     <section className="app">
-      <Hero />
-      <Form
-        inputFields={formData.inputFields}
-        inputValues={formInputValues}
-        onInputChange={handleInputChange}
-        onSubmit={handleFormSubmit}
-      />
+      <Switch>
+        <Route exact path="/">
+          <Hero />
+          <Form
+            inputFields={formData.inputFields}
+            inputValues={formInputValues}
+            onInputChange={handleInputChange}
+            onSubmit={handleFormSubmit}
+          />
+        </Route>
+        <Route path="/submissions">
+          <Submissions submissions={submissions} />
+        </Route>
+      </Switch>
     </section>
   );
 };

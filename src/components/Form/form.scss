@@ -14,10 +14,11 @@
   @include desktop {
     width: auto;
     justify-content: center;
+    align-items: flex-start;
   }
 
   &__claim {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 
     span {
       color: $secondary-color;
@@ -35,7 +36,9 @@
     width: 90%;
     border: none;
     border-radius: 6px;
+    margin-bottom: 30px;
     cursor: pointer;
+    outline: none;
 
     @include tablet {
       width: 400px;
@@ -43,6 +46,17 @@
 
     @include desktop {
       width: 100px;
+    }
+  }
+
+  &__link {
+    color: $secondary-color;
+    text-decoration: underline;
+    font-size: 16px;
+    margin-bottom: 30px;
+
+    @include tablet {
+      display: none;
     }
   }
 

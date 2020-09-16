@@ -38,6 +38,12 @@
     }
   }
 
+  &__link {
+    color: $secondary-color;
+    text-decoration: underline;
+    font-size: 18px;
+  }
+
   &__div {
     position: absolute;
     bottom: 0;
