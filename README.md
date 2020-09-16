@@ -22,6 +22,14 @@ Si quieres arrancar el proyecto, usa el comando:
 npm start
 ```
 
+### Cómo ejecutar los test
+
+Si quieres ejecutar los test, usa el comando:
+
+```
+npm test
+```
+
 ### Cómo publicar el proyecto en producción
 
 Para publicar el proyecto en producción, usa el comando:
