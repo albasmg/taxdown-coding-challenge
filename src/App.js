@@ -25,6 +25,14 @@ const App = () => {
     setSubmissions([...submissions, formInputValues]);
   };
 
+  const handleClearButttonClick = () => {
+    setSubmissions([]);
+  };
+
+  const handleSendToServerButtonClick = async () => {
+    return await new Promise((resolve) => setTimeout(resolve, 4000));
+  };
+
   return (
     <section className="app">
       <Switch>
@@ -38,7 +46,11 @@ const App = () => {
           />
         </Route>
         <Route path="/submissions">
-          <Submissions submissions={submissions} />
+          <Submissions
+            submissions={submissions}
+            onClearButtonClick={handleClearButttonClick}
+            onSendToServerButtonClick={handleSendToServerButtonClick}
+          />
         </Route>
       </Switch>
     </section>

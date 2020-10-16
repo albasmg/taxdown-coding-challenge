@@ -1,7 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Input = ({ id, placeholder, type, value, maxLength, onChange }) => {
+const Input = ({
+  id,
+  placeholder,
+  type,
+  value,
+  maxLength,
+  onChange,
+  options,
+}) => {
+  if (type === 'singleselect') {
+    return (
+      <select id={id} placeholder={placeholder} onChange={onChange}>
+        {options.map((option) => (
+          <option key={option}>{option}</option>
+        ))}
+      </select>
+    );
+  }
+
   return (
     <input
       id={id}

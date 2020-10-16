@@ -26,19 +26,22 @@ const Form = ({ inputFields, inputValues, onInputChange, onSubmit }) => {
       <Link to="/submissions">
         <p className="form__link">Show all submissions</p>
       </Link>
-      {inputFields.map(({ label, id, placeholder, type, maxLength }) => (
-        <div className="form__group" key={id}>
-          <Label id={id} title={label} isRequired></Label>
-          <Input
-            id={id}
-            placeholder={placeholder}
-            type={type}
-            maxLength={maxLength}
-            value={inputValues[id]}
-            onChange={(ev) => onInputChange(ev, id)}
-          />
-        </div>
-      ))}
+      {inputFields.map(
+        ({ label, id, placeholder, type, maxLength, options }) => (
+          <div className="form__group" key={id}>
+            <Label id={id} title={label} isRequired></Label>
+            <Input
+              id={id}
+              placeholder={placeholder}
+              type={type}
+              maxLength={maxLength}
+              options={options}
+              value={inputValues[id]}
+              onChange={(ev) => onInputChange(ev, id)}
+            />
+          </div>
+        )
+      )}
       <input
         type="submit"
         value="Submit"

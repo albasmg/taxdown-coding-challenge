@@ -1,6 +1,13 @@
 {
   "inputFields": [
     {
+      "id": "surname",
+      "label": "Surname",
+      "placeholder": "Your last name",
+      "type": "text",
+      "maxLength": 1
+    },
+    {
       "id": "name",
       "label": "Name",
       "placeholder": "Your first name",
@@ -8,17 +15,18 @@
       "maxLength": 20
     },
     {
-      "id": "surname",
-      "label": "Surname",
-      "placeholder": "Your last name",
-      "type": "text",
-      "maxLength": 40
-    },
-    {
       "id": "age",
       "label": "Age",
       "placeholder": "Your age",
-      "type": "number"
+      "type": "number",
+      "defaultValue": "18"
+    },
+    {
+      "id": "gender",
+      "label": "gender",
+      "placeholder": "Your gender",
+      "type": "singleselect",
+      "options": ["Female", "Male"]
     }
   ]
 }
